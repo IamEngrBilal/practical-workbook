@@ -16,11 +16,11 @@ const ViewTodo = () => {
   const [todo, setTodo] = useState([]);
   let completed = 1;
   const { id } = useParams();
-  const url = "http://localhost:5000/todo/";
+  const url = "http://localhost:3000/api/";
 
   useEffect(() => {
     (async () => {
-      const allTodo = await axios.get(`${url}view/${id}`);
+      const allTodo = await axios.get(`${url}read/${id}`);
        setTodo(allTodo.data);
     })()
   }, []);
@@ -39,9 +39,7 @@ const ViewTodo = () => {
             <TableRow>
               <TableCell>S/N</TableCell>
               <TableCell align="left">Todo</TableCell>
-              <TableCell align="left">Is Completed</TableCell>
-              <TableCell align="left">Complete time</TableCell>
-              <TableCell align="left">Date created</TableCell>
+
               <TableCell align="left">Actions</TableCell>
             </TableRow>
           </TableHead>
@@ -55,11 +53,6 @@ const ViewTodo = () => {
                   {index + 1}
                 </TableCell>
                 <TableCell align="left">{todo.todo}</TableCell>
-                <TableCell align="left">
-                  {todo.is_completed ? "Yes" : "No"}
-                </TableCell>
-                <TableCell align="left">{todo.completed_time}</TableCell>
-                <TableCell align="left">{todo.create_time}</TableCell>
               </TableRow>
             ))}
           </TableBody>
