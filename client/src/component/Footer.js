@@ -32,7 +32,6 @@ function Footer() {
           color="text.secondary"
           component="p"
         >
-          Developed by Northino Software
         </Typography>
         <Copyright />
       </Container>
