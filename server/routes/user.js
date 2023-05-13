@@ -43,7 +43,6 @@ router.get('/logout',  (req,res)=>{
    if (err) {
      return next(err);
    }
-   res.redirect("/");
  });
 })
 
