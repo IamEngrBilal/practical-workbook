@@ -28,7 +28,7 @@ function Copyright(props) {
       {...props}>
       {"Copyright � "}
       <Link color="inherit" href="#">
-        Northino
+        Todo
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -45,18 +45,13 @@ const Login = () => {
   const [successMsg, setSuccessMsg] = useState("");
   const [sucess, setSucess] = useState();
   const [error, setError] = useState();
-  const [userContext, setUserContext] = useContext(UserContext);
-  const url = "http://localhost:5000/account";
+  const url = "http://localhost:3000/api";
   const navigate = useNavigate();
   let suc = true;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
-    console.log({
-      username: data.get("username"),
-      password: data.get("password"),
-    });
 
     try {
       const response = await axios.post(`${url}/login`, {
@@ -64,19 +59,12 @@ const Login = () => {
         userpassword: data.get("password"),
       });
       if (response.status === 200) {
-        console.log("Login successfully");
-        console.log(response.data);
-        localStorage.setItem("user", JSON.stringify(response.data));
-        const token = response?.data?.token;
-        setUserContext(oldValues => {
-         return {...oldValues, token: response.token}
-       })
         setSuccessMsg("Login Successfully");
         setSucess("Success");
         setUsername("");
         setUserpassword("");
         setSucess(true);
-        // navigate("/todo")
+        //navigate("/todo")
         //alert("Login Successfully")
       }
     } catch (err) {
@@ -98,10 +86,6 @@ const Login = () => {
         setError("Error");
       }
     }
-  };
-
-  const logout = () => {
-    localStorage.removeItem("user");
   };
 
   return (
