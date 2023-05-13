@@ -12,3 +12,5 @@ Exercise 3: Waste evacuation has become a serious problem in Katsina Metropolis.
 
 Exercise 4: Inline with the CBN cashless policy, petty traders finds it extremely difficult to make payment for transactions below N500.00 Naira, using the user’s phone number develop a wallet system that can help those traders with payment, Use Interswitch:
 
+
+##EXERCISE 1 TAKEN BY MUHAMMAD SANI
