@@ -14,5 +14,5 @@ Exercise 4: Inline with the CBN cashless policy, petty traders finds it extremel
 
 
 ##EXERCISE 1 TAKEN BY MUHAMMAD SANI
-## Engnr Muhammad Sani successfully drop his part i.e EXERCISE 1.
+## Engnr Muhammad Sani successfully done his part i.e EXERCISE 1.
 now Remaining 2, 3, and 4.
