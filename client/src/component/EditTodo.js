@@ -29,7 +29,7 @@ const EditTodo = () => {
   const handleSubmit = (e) => {
     try {
       e.preventDefault();
-      axios.put(`${url}edit/${id}`, {
+      axios.put(`${url}update/${id}`, {
         todo: todo,
       });
     } catch (error) {
@@ -40,7 +40,7 @@ const EditTodo = () => {
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get(`${url}view/${id}`);
+      const response = await axios.get(`${url}read/${id}`);
       setTodo(response.data.todo);
     })();
   }, []);
