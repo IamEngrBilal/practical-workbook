@@ -20,14 +20,14 @@ const ViewTodo = () => {
   let completed = 1;
   const { id } = useParams();
   const navigate = useNavigate();
-  const url = "http://localhost:5000/todo/";
+  const url = "http://localhost:3000/api/";
 
   useEffect(() => {
     getTodoById();
   }, []);
 
   const getTodoById = async () => {
-    const allTodo = await axios.get(`${url}view/${id}`);
+    const allTodo = await axios.get(`${url}read/${id}`);
     setTodo(allTodo.data);
   };
 
@@ -39,16 +39,7 @@ const ViewTodo = () => {
       })
       .catch((error) => console.log(`Error: ${error}`));
   };
-  const completeTodo = (id) => {
-    axios
-      .put(`${url}/complete/${id}`, {
-        is_completed: completed,
-      })
-      .then((response) => {
-        getTodoById();
-      })
-      .catch((error) => console.log(`Error: ${error}`));
-  };
+  
  
   return (
     <Container>
@@ -58,9 +49,7 @@ const ViewTodo = () => {
           <TableHead className={classes.table}>
             <TableRow>
               <TableCell align="left">TODO</TableCell>
-              <TableCell align="left">STATUS</TableCell>
-              <TableCell align="left">COMPLETED TIME</TableCell>
-              <TableCell align="left">DATE CREATED</TableCell>
+
               <TableCell align="left">ACTIONS</TableCell>
             </TableRow>
           </TableHead>
@@ -69,11 +58,7 @@ const ViewTodo = () => {
               sx={{ "&:last-child td, &:last-child th": { border: -1 } }}
             >
               <TableCell align="left">{todo.todo}</TableCell>
-              <TableCell align="left">
-                {todo.is_completed ? "Completed" : "Not Completed"}
-              </TableCell>
-              <TableCell align="left">{todo.completed_time}</TableCell>
-              <TableCell align="left">{todo.create_time}</TableCell>
+
               <TableCell align="left">
                 <Button
                   variant="contained"
@@ -83,15 +68,8 @@ const ViewTodo = () => {
                 >
                   <DeleteForeverIcon />
                 </Button>
-                {"  "}
-                <Button
-                  variant="contained"
-                  color="primary"
-                  size="small"
-                  onClick={() => completeTodo(todo.id)}
-                >
-                  <EventAvailableIcon />
-                </Button>
+
+
               </TableCell>
             </TableRow>
           </TableBody>
