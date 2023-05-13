@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.use(
   session({
-    secret: "my little secret.",
+    secret: "my session secret ",
     resave: false,
     saveUninitialized: false,
   })
