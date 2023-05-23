@@ -1,0 +1,70 @@
+.field{
+  margin-top:20px !important;
+  margin-bottom:20px !important;
+  display: block !important;
+}
+.link {
+    margin-right: 20px !important;
+    font-size: 16px !important;
+    color: rgb(10, 214, 44) !important;
+}
+
+.btn {
+    border-radius: 10px;
+    margin-right: 20px !important;
+    font-size: 16px !important;
+    color: rgb(244, 240, 248) !important;
+    background-color: #4d8ee4;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    
+}
+
+.table{
+   color: rgb(220, 216, 224) !important;
+   background-color: #a7b8cf;
+}
+
+.appbar{
+   border-radius: 0px 0px 15px 15px;
+}
+
+.alert{
+   background-color: red;
+   color: white;
+   opacity: 0.3;
+   border-radius: 5px;
+   border: 1px solid black;
+   padding: 10px;
+   height: 20px;
+   width: 300px;
+   margin-left: 18px;
+}
+
+.alertSuccess{
+   background-color: rgb(7, 221, 139);
+   color: rgb(10, 1, 1);
+   opacity: 0.3;
+   border-radius: 5px;
+   border: 1px solid black;
+   padding: 10px;
+   height: 30px;
+   width: 300px;
+   margin-left: 18px;
+}
+.success{
+   color: rgb(4, 161, 75);
+   margin-left: 18px;
+}
+
+.error{
+   color: rgb(212, 14, 14);
+   margin-left: 18px;
+}
+
+.divBg{
+
+}
+
